@@ -1,4 +1,4 @@
-import { useState} from "react";
+import {useState} from "react";
 import Section from "../components/Section/Section"
 import Statistics from "./Statistics/Statistics";
 import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
@@ -11,25 +11,20 @@ const App = () => {
         neutral: 0,
         bad: 0
  })
- // console.log(stat);
 
   const countTotalFeedback = () => {
-      console.log(stat.good + stat.neutral + stat.bad);
-        return stat.good + stat.neutral + stat.bad
-    }
+      return stat.good + stat.neutral + stat.bad
+  }
     
-    const countPositiveFeedbackPercentage = () => {
-        return Math.floor(stat.good * 100 / countTotalFeedback())
-    }
+  const countPositiveFeedbackPercentage = () => {
+      return Math.floor(stat.good * 100 / countTotalFeedback())
+  }
 
   const handleClick = (evt) => {
     const { name } = evt.target;
-     console.log(stat[evt.target.name]+1);
-    setStat(prev => ({ ...prev, [name]: prev[name] + 1 })) 
-
-        }
+    setStat(prev => ({ ...prev, [name]: prev[name] + 1 }))
+  }
     
-
 return (
     <div
       style={{
